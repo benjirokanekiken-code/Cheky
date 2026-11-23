@@ -26,6 +26,8 @@ jobs:
           chmod +x gradlew
           ./gradlew assembleRelease --no-daemon
           cp app/build/outputs/apk/release/app-release.apk Cheky.apk
+          ls -lh Cheky.apk
+          unzip -l Cheky.apk | sort -k1 -n -r | head -8
 
       - uses: actions/upload-artifact@v4
         with:
